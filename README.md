@@ -1,14 +1,14 @@
 # 2020.09.22 회의내용
 
 ## 앱 소개(by 이가은)
-![1](http://drive.google.com/uc?export=view&id=1p7knh4BfBp1hzEpSM-HQW6pLSSr_hP7R)
-![2](http://drive.google.com/uc?export=view&id=1mR66qS2zZAQJ8eVJ2fJho75NEbheybCQ)
-![3](http://drive.google.com/uc?export=view&id=1CZDqvYSSYiQt9YfggUbMI01vFku6wLMC)
-![4](http://drive.google.com/uc?export=view&id=1EdtXOo6bWewYBLwXZC5drWqemp4Wj5H0)
-![5](http://drive.google.com/uc?export=view&id=12worb7voHldZv6FZwrJFw2TxFzZwJFf5)
-![6](http://drive.google.com/uc?export=view&id=1O2ex062sY_oRYn_tJN_7bvjX_fY34evt)
-![7](http://drive.google.com/uc?export=view&id=1XVaEe2yg0AsPc2LtJc7tCvXRkhqJJuSz)
-![8](http://drive.google.com/uc?export=view&id=1376n4trJ31KTR0lP9BKq62yOE77l0pXZ)
+![1](http://drive.google.com/uc?export=view&id=1p7knh4BfBp1hzEpSM-HQW6pLSSr_hP7R "")
+![2](http://drive.google.com/uc?export=view&id=1mR66qS2zZAQJ8eVJ2fJho75NEbheybCQ "")
+![3](http://drive.google.com/uc?export=view&id=1CZDqvYSSYiQt9YfggUbMI01vFku6wLMC "")
+![4](http://drive.google.com/uc?export=view&id=1EdtXOo6bWewYBLwXZC5drWqemp4Wj5H0 "")
+![5](http://drive.google.com/uc?export=view&id=12worb7voHldZv6FZwrJFw2TxFzZwJFf5 "")
+![6](http://drive.google.com/uc?export=view&id=1O2ex062sY_oRYn_tJN_7bvjX_fY34evt "")
+![7](http://drive.google.com/uc?export=view&id=1XVaEe2yg0AsPc2LtJc7tCvXRkhqJJuSz "")
+![8](http://drive.google.com/uc?export=view&id=1376n4trJ31KTR0lP9BKq62yOE77l0pXZ "")
 
 
 ## 필요한 기능
