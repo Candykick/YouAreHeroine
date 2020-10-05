@@ -4,105 +4,154 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageButton
+        android:id="@+id/main_ibtn_all"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/main_ibtn_made"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/main_ibtn_latest"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <ImageButton
+        android:id="@+id/main_ibtn_made"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/main_ibtn_write"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/main_ibtn_all"
+        app:layout_constraintTop_toBottomOf="@+id/main_ibtn_writer"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <ImageButton
+        android:id="@+id/main_ibtn_write"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/main_ibtn_made"
+        app:layout_constraintTop_toBottomOf="@id/main_ibtn_king"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <ImageView
         android:id="@+id/main_image"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/picture1" />
 
-    <Button
-        android:id="@+id/btn_latest_main"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/btn_all_main"
-        app:layout_constraintEnd_toStartOf="@+id/btn_writer_main"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <ImageButton
+        android:id="@+id/main_ibtn_latest"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_ibtn_all"
+        app:layout_constraintEnd_toStartOf="@+id/main_ibtn_writer"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_image" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <Button
-        android:id="@+id/btn_writer_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/btn_made_main"
-        app:layout_constraintEnd_toStartOf="@+id/btn_search_main"
+    <ImageButton
+        android:id="@+id/main_ibtn_writer"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_ibtn_made"
+        app:layout_constraintEnd_toStartOf="@+id/main_ibtn_search"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_latest_main"
-        app:layout_constraintTop_toBottomOf="@+id/main_image" />
+        app:layout_constraintStart_toEndOf="@+id/main_ibtn_latest"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <Button
-        android:id="@+id/btn_search_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/btn_made_main"
-        app:layout_constraintEnd_toStartOf="@+id/btn_king_main"
+    <ImageButton
+        android:id="@+id/main_ibtn_search"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_ibtn_made"
+        app:layout_constraintEnd_toStartOf="@+id/main_ibtn_king"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_writer_main"
-        app:layout_constraintTop_toBottomOf="@+id/main_image" />
+        app:layout_constraintStart_toEndOf="@+id/main_ibtn_writer"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <Button
-        android:id="@+id/btn_king_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/btn_write_main"
+    <ImageButton
+        android:id="@+id/main_ibtn_king"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_ibtn_write"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_search_main"
-        app:layout_constraintTop_toBottomOf="@+id/main_image" />
+        app:layout_constraintStart_toEndOf="@+id/main_ibtn_search"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <Button
-        android:id="@+id/btn_all_main"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_made_main"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_made_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_write_main"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_all_main" />
-
-    <Button
-        android:id="@+id/btn_write_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_made_main" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleMargin="4dp"
+        app:titleTextColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Story for me"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/main_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/main_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibtn_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/main_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <ImageButton
+        android:id="@+id/ibtn_mypage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_star" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

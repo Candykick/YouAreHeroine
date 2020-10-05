@@ -28,7 +28,7 @@
         android:gravity="center"
         android:text="Story for me"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
         app:layout_constraintEnd_toEndOf="@+id/main_toolbar"
         app:layout_constraintStart_toStartOf="@+id/main_toolbar"
