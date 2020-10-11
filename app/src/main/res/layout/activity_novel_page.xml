@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WriterPageActivity">
+    tools:context=".NovelPageActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/toolbar3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#D5CEFF"
@@ -35,48 +35,76 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/wp_rv_list"
+        android:id="@+id/np_rv_list"
         android:layout_width="0dp"
-        android:layout_height="550dp"
+        android:layout_height="0dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wp_tv_writer_intro" />
+        app:layout_constraintTop_toBottomOf="@+id/np_tv_keword" />
 
     <TextView
-        android:id="@+id/wp_tv_name"
+        android:id="@+id/np_tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="______님의 작품"
-        android:textSize="24dp"
+        android:fontFamily="sans-serif-black"
+        android:text="A 시리즈"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
     <TextView
-        android:id="@+id/wp_tv_writer_intro"
+        android:id="@+id/np_tv_novel_intro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:text="작가 소개란 (작가가 직접 설정 가능) \n최대 글자수 200자 제한"
+        android:text="작품 소개란 (작가가 직접 설정 가능) \n글자수 제한 얼마? 더보기 기능 필요하지 않나"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wp_tv_name" />
+        app:layout_constraintTop_toBottomOf="@+id/np_tv_name" />
 
-    <ImageView
-        android:id="@+id/wp_iv_heart_off"
-        android:layout_width="28dp"
-        android:layout_height="30dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/wp_tv_writer_intro"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/np_tv_novel_intro"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/jjimggong_off" />
+        app:layout_constraintTop_toTopOf="@+id/np_tv_name">
+
+        <ImageView
+            android:id="@+id/np_iv_zzim_off"
+            android:layout_width="28dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/jjimggong_off" />
+
+        <TextView
+            android:id="@+id/np_tv_zzim_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="24,102"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/np_tv_keword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:text="키워드 #예시 #주인공 #세계관 #장르 \n작품소개랑 키워드 사이에 실선 필요\n키워드도 접었다 펼칠 수 있게 하면 안 되나"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/np_tv_novel_intro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
