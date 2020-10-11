@@ -4,15 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import java.util.ArrayList;
-
-public class HallOfFame extends AppCompatActivity {
-
-    public ArrayList<Fame> data;
+public class NewestWork extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hall_of_fame);
+        setContentView(R.layout.activity_newest_work);
     }
 }
