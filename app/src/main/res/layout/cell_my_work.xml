@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="70dp">
-
+    <!--뭐지뭐지-->
     <ImageView
         android:id="@+id/wp_iv_novel_pic"
         android:layout_width="60dp"
