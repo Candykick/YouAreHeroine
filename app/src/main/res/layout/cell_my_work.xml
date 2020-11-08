@@ -14,8 +14,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/iv_myPage_title" />
+        app:srcCompat="@drawable/iv_myPage_title"
 
+        />
+
+    <!--뭐지-->
     <LinearLayout
         android:id="@+id/mp_ll_writerNnum"
         android:layout_width="0dp"
