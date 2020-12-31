@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -19,7 +18,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 
-public class HallOfFame extends AppCompatActivity {
+public class LatestWork extends AppCompatActivity {
 
     private static final String TAG = "TEST";
     private RequestQueue queue;
@@ -29,7 +28,7 @@ public class HallOfFame extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hall_of_fame);
+        setContentView(R.layout.activity_latest_work);
 
         queue = Volley.newRequestQueue(this);
         gson = new Gson();
@@ -38,13 +37,13 @@ public class HallOfFame extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                ArrayList<HallOfFame_data> dataArrayList = gson.fromJson(response, new TypeToken<ArrayList<HallOfFame_data>>() {
+                ArrayList<LatestWork_data> dataArrayList = gson.fromJson(response, new TypeToken<ArrayList<LatestWork_data>>() {
                 }.getType());
 
-                RecyclerView rank_recy = findViewById(R.id.rank_recy);
-                HallOfFameAdapter adapter = new HallOfFameAdapter(getApplicationContext(), dataArrayList);
-                rank_recy.setAdapter(adapter);
-                rank_recy.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                RecyclerView latest_recy = findViewById(R.id.latest_recy);
+                LatestWorkAdapter adapter = new LatestWorkAdapter(getApplicationContext(), dataArrayList);
+                latest_recy.setAdapter(adapter);
+                latest_recy.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
         }, new Response.ErrorListener() {
             @Override
