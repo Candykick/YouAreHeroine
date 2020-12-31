@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">YouAreHeroine</string>
+    <string name="kakao_app_key">660497bf79c0e2672cbfd17558c324e3</string>
 </resources>

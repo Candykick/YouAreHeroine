@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/mpCell"
     android:layout_width="match_parent"
     android:layout_height="70dp">
     <!--뭐지뭐지-->
 
     <ImageView
-        android:id="@+id/wp_iv_novel_pic"
+        android:id="@+id/mp_iv_novel_pic"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="10dp"
@@ -22,30 +22,46 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/wp_iv_novel_pic"
-        app:layout_constraintStart_toEndOf="@+id/wp_iv_novel_pic"
-        app:layout_constraintTop_toTopOf="@+id/wp_iv_novel_pic">
+        app:layout_constraintBottom_toBottomOf="@+id/mp_iv_novel_pic"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toEndOf="@+id/mp_iv_novel_pic"
+        app:layout_constraintTop_toTopOf="@+id/mp_iv_novel_pic">
 
         <TextView
-            android:id="@+id/mp_tv_writer"
+            android:id="@+id/mp_tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-smallcaps"
-            android:text="작품명"
+            android:text="제목"
             android:textSize="24dp" />
 
-        <TextView
-            android:id="@+id/mp_tv_num"
-            android:layout_width="157dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="조회수 340274 | 댓글수 7841"
-            android:textSize="10sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mp_tv_watcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조회수 340274 |"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/mp_tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 댓글수 7841"
+                android:textSize="10sp" />
+        </LinearLayout>
+
 
     </LinearLayout>
-
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
