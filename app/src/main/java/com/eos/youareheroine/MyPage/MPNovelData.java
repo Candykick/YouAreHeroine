@@ -6,7 +6,7 @@ public class MPNovelData {
     public int watcher;
     public int comment;
     public String date;
-    public String img;
+    public String image;
 
     public MPNovelData(int id, String title, int watcher, int comment, String date, String img) {
         this.id = id;
@@ -14,6 +14,6 @@ public class MPNovelData {
         this.watcher = watcher;
         this.comment = comment;
         this.date = date;
-        this.img = img;
+        this.image = img;
     }
 }

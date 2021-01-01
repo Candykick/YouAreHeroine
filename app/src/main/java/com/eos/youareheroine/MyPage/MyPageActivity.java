@@ -62,10 +62,11 @@ public class MyPageActivity extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
         gson = new Gson();
-        final String url = "";
-
+        final String urlN = "https://my-json-server.typicode.com/candykick/apitest/series";
+        final String urlM = "https://my-json-server.typicode.com/candykick/apitest/series";
+        final String urlW = "https://my-json-server.typicode.com/candykick/apitest/series";
         //novel
-        final StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        final StringRequest stringRequest = new StringRequest(Request.Method.GET, urlN, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 ArrayList<MPNovelData> dataList = gson.fromJson(response, new TypeToken<ArrayList<MPNovelData>>(){}.getType());
@@ -84,11 +85,12 @@ public class MyPageActivity extends AppCompatActivity {
             }
         });
         stringRequest.setTag(TAG);
+        queue.add(stringRequest);
 
 
 
         //writer
-        final StringRequest stringRequest1 = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        final StringRequest stringRequest1 = new StringRequest(Request.Method.GET, urlW, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 ArrayList<MPWriterData> dataList = gson.fromJson(response, new TypeToken<ArrayList<MPWriterData>>(){}.getType());
@@ -110,13 +112,13 @@ public class MyPageActivity extends AppCompatActivity {
         stringRequest1.setTag(TAG);
 
         //mine
-        final StringRequest stringRequest2 = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        final StringRequest stringRequest2 = new StringRequest(Request.Method.GET, urlM, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                ArrayList<MPNovelData> dataList = gson.fromJson(response, new TypeToken<ArrayList<MPNovelData>>(){}.getType());
+                ArrayList<MPMyWorkData> dataList = gson.fromJson(response, new TypeToken<ArrayList<MPMyWorkData>>(){}.getType());
                 num.setText("전체 개수 : " + dataList.size() );
                 RecyclerView rvMain = findViewById(R.id.mp_rv);
-                MyPageNovelAdapter adapter = new MyPageNovelAdapter(getApplicationContext(), dataList);
+                MyPageMineAdapter adapter = new MyPageMineAdapter(getApplicationContext(), dataList);
                 rvMain.setAdapter(adapter);
                 rvMain.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }

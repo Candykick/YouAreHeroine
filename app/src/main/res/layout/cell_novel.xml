@@ -33,10 +33,10 @@
         <TextView
             android:id="@+id/mp_tv_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="제목"
-            android:textSize="24dp" />
+            android:textSize="16dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"

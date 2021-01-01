@@ -3,11 +3,12 @@ package com.eos.youareheroine.MyPage;
 public class MPMyWorkData {
     public int id;
     public String title;
+    public String image;
+    public String date;
     public int watcher;
     public int comment;
-    public String date;
     public boolean upload;
-    public String img;
+
 
     public MPMyWorkData(int id, String title, int watcher, int comment, String date, boolean upload, String img) {
         this.id = id;
@@ -16,6 +17,6 @@ public class MPMyWorkData {
         this.comment = comment;
         this.date = date;
         this.upload = upload;
-        this.img = img;
+        this.image = img;
     }
 }

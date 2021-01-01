@@ -43,10 +43,10 @@ public class MyPageWriterAdapter extends RecyclerView.Adapter<MyPageWriterAdapte
         // cell의 모든 View에 데이터를 알맞게 넣어준다.
         holder.mp_tv_writer.setText(dataList.get(position).writer);
         holder.mp_tv_novel.setText(Integer.toString(dataList.get(position).novel));
-        holder.mp_tv_zzim.setText(dataList.get(position).zzim);
+  //      holder.mp_tv_zzim.setText(dataList.get(position).zzim);
         holder.mp_tv_date.setText(dataList.get(position).date);
 
-        Glide.with(context).load(dataList.get(position).img).into(holder.mp_iv);
+        Glide.with(context).load(dataList.get(position).image).into(holder.mp_iv);
 
         // 각 셀을 클릭 시 작업
         holder.mpCell.setOnClickListener(new View.OnClickListener() {

@@ -44,11 +44,11 @@ public class MyPageNovelAdapter extends RecyclerView.Adapter<MyPageNovelAdapter.
 
         // cell의 모든 View에 데이터를 알맞게 넣어준다.
         holder.mp_tv_title.setText(dataList.get(position).title);
-        holder.mp_tv_watcher.setText(Integer.toString(dataList.get(position).watcher));
-        holder.mp_tv_comment.setText(dataList.get(position).comment);
+ //       holder.mp_tv_watcher.setText(Integer.toString(dataList.get(position).watcher));
+  //      holder.mp_tv_comment.setText(dataList.get(position).comment);
         holder.mp_tv_date.setText(dataList.get(position).date);
 
-        Glide.with(context).load(dataList.get(position).img).into(holder.mp_iv);
+        Glide.with(context).load(dataList.get(position).image).into(holder.mp_iv);
 
         holder.mp_tv_title.setOnClickListener(new View.OnClickListener() {
             @Override

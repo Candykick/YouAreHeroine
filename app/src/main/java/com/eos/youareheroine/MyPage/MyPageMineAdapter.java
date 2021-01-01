@@ -42,15 +42,15 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
 
         // cell의 모든 View에 데이터를 알맞게 넣어준다.
         holder.mp_tv_title.setText(dataList.get(position).title);
-        holder.mp_tv_watcher.setText(Integer.toString(dataList.get(position).watcher));
-        holder.mp_tv_comment.setText(dataList.get(position).comment);
+     //   holder.mp_tv_watcher.setText(Integer.toString(dataList.get(position).watcher));
+    //    holder.mp_tv_comment.setText(dataList.get(position).comment);
         holder.mp_tv_date.setText(dataList.get(position).date);
         if(dataList.get(position).upload == true){
-            holder.mp_tv_upload.setText("O");
+      //      holder.mp_tv_upload.setText("O");
         }else{
-            holder.mp_tv_upload.setText("X");
+    //        holder.mp_tv_upload.setText("X");
         }
-        Glide.with(context).load(dataList.get(position).img).into(holder.mp_iv);
+        Glide.with(context).load(dataList.get(position).image).into(holder.mp_iv);
         // 각 셀을 클릭 시 작업 
         holder.mpCell.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -2,8 +2,6 @@ package com.eos.youareheroine;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -72,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
         getHashKey();
 
         latest = findViewById(R.id.main_ibtn_latest);
-        writer = findViewById(R.id.main_ibtn_writer);
+        writer = findViewById(R.id.main_ibtn_rank);
         search = findViewById(R.id.main_ibtn_search);
-        all = findViewById(R.id.main_ibtn_all);
-        made = findViewById(R.id.main_ibtn_made);
+        all = findViewById(R.id.main_ibtn_whole);
+        made = findViewById(R.id.main_ibtn_notice);
         write = findViewById(R.id.main_ibtn_write);
 
         main = findViewById(R.id.ibtn_main);
