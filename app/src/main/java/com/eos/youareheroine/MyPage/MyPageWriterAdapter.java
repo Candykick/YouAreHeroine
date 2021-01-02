@@ -32,7 +32,7 @@ public class MyPageWriterAdapter extends RecyclerView.Adapter<MyPageWriterAdapte
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         // 셀 레이아웃을 불러오는 역할.
-        View view = LayoutInflater.from(context).inflate(R.layout.cell_novel, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.cell_writer, parent, false);
         Holder holder = new Holder(view);
         return holder;
     }
@@ -41,19 +41,19 @@ public class MyPageWriterAdapter extends RecyclerView.Adapter<MyPageWriterAdapte
     public void onBindViewHolder(@NonNull Holder holder, final int position) {
 
         // cell의 모든 View에 데이터를 알맞게 넣어준다.
-        holder.mp_tv_writer.setText(dataList.get(position).writer);
-        holder.mp_tv_novel.setText(Integer.toString(dataList.get(position).novel));
-  //      holder.mp_tv_zzim.setText(dataList.get(position).zzim);
-        holder.mp_tv_date.setText(dataList.get(position).date);
+        holder.mp_tv_writer.setText(dataList.get(position).name);
+        //     holder.mp_tv_novel.setText(Integer.toString(dataList.get(position).novel));
+        //      holder.mp_tv_zzim.setText(dataList.get(position).zzim);
+        //    holder.mp_tv_date.setText(dataList.get(position).date);
 
-        Glide.with(context).load(dataList.get(position).image).into(holder.mp_iv);
+
 
         // 각 셀을 클릭 시 작업
         holder.mpCell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // 여기서는 각 셀을 클릭 시 셀에 해당하는 이름 데이터를 Toast message로 띄운다.
-                Toast.makeText(context, "Clicked "+dataList.get(position).writer, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Clicked " + dataList.get(position).name, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -62,7 +62,7 @@ public class MyPageWriterAdapter extends RecyclerView.Adapter<MyPageWriterAdapte
     // RecyclerView의 아이템 갯수를 반환하는 함수.
     @Override
     public int getItemCount() {
-        if(dataList == null)
+        if (dataList == null)
             return 0;
         else
             return dataList.size();
@@ -70,8 +70,6 @@ public class MyPageWriterAdapter extends RecyclerView.Adapter<MyPageWriterAdapte
 
     // cell에 대한 ViewHolder
     public static class Holder extends RecyclerView.ViewHolder {
-
-
 
         protected ConstraintLayout mpCell;
         protected ImageView mp_iv;

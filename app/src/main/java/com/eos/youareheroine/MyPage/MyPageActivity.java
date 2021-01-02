@@ -1,11 +1,14 @@
 package com.eos.youareheroine.MyPage;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -64,7 +67,7 @@ public class MyPageActivity extends AppCompatActivity {
         gson = new Gson();
         final String urlN = "https://my-json-server.typicode.com/candykick/apitest/series";
         final String urlM = "https://my-json-server.typicode.com/candykick/apitest/series";
-        final String urlW = "https://my-json-server.typicode.com/candykick/apitest/series";
+        final String urlW = "https://my-json-server.typicode.com/candykick/apitest/author";
         //novel
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, urlN, new Response.Listener<String>() {
             @Override
@@ -134,9 +137,13 @@ public class MyPageActivity extends AppCompatActivity {
         stringRequest2.setTag(TAG);
 
         novel.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View v) {
 
+                mine.setTextColor(Color.parseColor("#000000"));
+                writer.setTextColor(Color.parseColor("#000000"));
+                novel.setTextColor(Color.parseColor("#D6D5F4"));
                 queue.add(stringRequest);
             }
         });
@@ -145,7 +152,11 @@ public class MyPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                queue.add(stringRequest1);
+                novel.setTextColor(Color.parseColor("#000000"));
+                writer.setTextColor(Color.parseColor("#000000"));
+                mine.setTextColor(Color.parseColor("#D6D5F4"));
+                queue.add(stringRequest2);
+
 
             }
         });
@@ -153,8 +164,10 @@ public class MyPageActivity extends AppCompatActivity {
         writer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                queue.add(stringRequest2);
+                novel.setTextColor(Color.parseColor("#000000"));
+                mine.setTextColor(Color.parseColor("#000000"));
+                writer.setTextColor(Color.parseColor("#D6D5F4"));
+                queue.add(stringRequest1);
             }
         });
 

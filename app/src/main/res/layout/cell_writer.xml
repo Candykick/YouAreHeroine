@@ -7,16 +7,6 @@
     android:layout_height="70dp">
     <!--뭐지뭐지-->
 
-    <ImageView
-        android:id="@+id/mp_iv_novel_pic"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/iv_writer_title" />
-
     <LinearLayout
         android:id="@+id/mp_ll_writerNnum"
         android:layout_width="0dp"
@@ -25,17 +15,17 @@
         android:layout_marginEnd="10dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/mp_iv_novel_pic"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout"
-        app:layout_constraintStart_toEndOf="@+id/mp_iv_novel_pic"
-        app:layout_constraintTop_toTopOf="@+id/mp_iv_novel_pic">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="14dp">
 
         <TextView
             android:id="@+id/mp_tv_writer"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="작가명"
+            android:textColor="#000000"
             android:textSize="24dp" />
 
         <LinearLayout
@@ -73,7 +63,7 @@
         <TextView
             android:id="@+id/mp_tv_date"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="right"
             android:text="2020-10-11"
             android:textSize="10sp" />

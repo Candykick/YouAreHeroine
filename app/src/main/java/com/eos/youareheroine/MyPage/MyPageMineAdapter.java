@@ -1,6 +1,7 @@
 package com.eos.youareheroine.MyPage;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,13 +33,13 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         // 셀 레이아웃을 불러오는 역할.
-        View view = LayoutInflater.from(context).inflate(R.layout.cell_novel, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.cell_my_work, parent, false);
         Holder holder = new Holder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Holder holder, final int position) {
+    public void onBindViewHolder(@NonNull final Holder holder, final int position) {
 
         // cell의 모든 View에 데이터를 알맞게 넣어준다.
         holder.mp_tv_title.setText(dataList.get(position).title);
@@ -50,6 +51,7 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
         }else{
     //        holder.mp_tv_upload.setText("X");
         }
+        holder.mp_iv_end.setImageResource(R.drawable.ic_ing);
         Glide.with(context).load(dataList.get(position).image).into(holder.mp_iv);
         // 각 셀을 클릭 시 작업 
         holder.mpCell.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +59,14 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
             public void onClick(View view) {
                 // 여기서는 각 셀을 클릭 시 셀에 해당하는 이름 데이터를 Toast message로 띄운다.
                 Toast.makeText(context, "Clicked "+dataList.get(position).title, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        holder.mp_iv_end.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               holder.mp_iv_end.setImageResource(R.drawable.ic_end);
             }
         });
     }
@@ -81,6 +91,7 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
         protected TextView mp_tv_comment;
         protected TextView mp_tv_date;
         protected TextView mp_tv_upload;
+        protected ImageView mp_iv_end;
 
         public Holder(View view) {
             super(view);
@@ -91,6 +102,7 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
             this.mp_tv_comment = view.findViewById(R.id.mp_tv_comment);
             this.mp_tv_date = view.findViewById(R.id.mp_tv_date);
             this.mp_tv_upload = view.findViewById(R.id.mp_tv_upload);
+            this.mp_iv_end = view.findViewById(R.id.mp_iv_end);
 
         }
     }
