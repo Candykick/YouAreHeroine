@@ -64,14 +64,14 @@
 
     <ImageButton
         android:id="@+id/ibtn_mypage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="4dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star" />
+        app:srcCompat="@drawable/ic_person" />
 
     <ImageButton
         android:id="@+id/ibtn_main"
@@ -112,12 +112,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/binggrae"
+            android:fontFamily="@font/bby"
             android:text="최신작품"
             android:textColor="#FFFFFF"
-            android:textSize="20dp"
 
-            />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -150,10 +149,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/binggrae"
+            android:fontFamily="@font/bby"
             android:text="명예의전당"
             android:textColor="#FFFFFF"
-            android:textSize="17dp" />
+            android:textSize="15dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -185,10 +184,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/binggrae"
+            android:fontFamily="@font/bby"
             android:text="검색"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
     </LinearLayout>
 
@@ -217,10 +216,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/binggrae"
-            android:text="전체 작품"
+            android:fontFamily="@font/bby"
+            android:text="전체작품"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
     </LinearLayout>
 
@@ -248,10 +247,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/binggrae"
+            android:fontFamily="@font/bby"
             android:text="공지"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
     </LinearLayout>
 
@@ -280,10 +279,10 @@
             android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/binggrae"
+            android:fontFamily="@font/bby"
             android:text="글쓰기"
             android:textColor="#FFFFFF"
-            android:textSize="20dp"
+            android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView6"

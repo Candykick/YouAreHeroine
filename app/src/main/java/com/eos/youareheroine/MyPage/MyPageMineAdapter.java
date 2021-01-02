@@ -42,7 +42,12 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
     public void onBindViewHolder(@NonNull final Holder holder, final int position) {
 
         // cell의 모든 View에 데이터를 알맞게 넣어준다.
-        holder.mp_tv_title.setText(dataList.get(position).title);
+        String title = dataList.get(position).title;
+        if(title.length() > 16){
+            title = title.substring(0,15)+ "…";
+
+        }
+        holder.mp_tv_title.setText(title);
      //   holder.mp_tv_watcher.setText(Integer.toString(dataList.get(position).watcher));
     //    holder.mp_tv_comment.setText(dataList.get(position).comment);
         holder.mp_tv_date.setText(dataList.get(position).date);
@@ -51,7 +56,6 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
         }else{
     //        holder.mp_tv_upload.setText("X");
         }
-        holder.mp_iv_end.setImageResource(R.drawable.ic_ing);
         Glide.with(context).load(dataList.get(position).image).into(holder.mp_iv);
         // 각 셀을 클릭 시 작업 
         holder.mpCell.setOnClickListener(new View.OnClickListener() {

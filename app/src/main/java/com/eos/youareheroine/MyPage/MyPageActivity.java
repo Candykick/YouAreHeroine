@@ -136,6 +136,7 @@ public class MyPageActivity extends AppCompatActivity {
 
         stringRequest2.setTag(TAG);
 
+        novel.setTextColor(Color.parseColor("#D6D5F4"));
         novel.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.P)
             @Override

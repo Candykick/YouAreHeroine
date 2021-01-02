@@ -42,12 +42,12 @@
 
             <TextView
                 android:id="@+id/mp_tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:fontFamily="sans-serif-smallcaps"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:fontFamily="@font/taom"
                 android:text="제목"
                 android:textColor="#000000"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
 
         </LinearLayout>
 
@@ -60,15 +60,17 @@
                 android:id="@+id/mp_tv_watcher"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/samlip"
                 android:text="조회수 340274 |"
-                android:textSize="10sp" />
+                android:textSize="10dp" />
 
             <TextView
                 android:id="@+id/mp_tv_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/samlip"
                 android:text=" 댓글수 7841"
-                android:textSize="10sp" />
+                android:textSize="10dp" />
         </LinearLayout>
 
 
@@ -88,6 +90,7 @@
             android:id="@+id/mp_tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samlip"
             android:gravity="right"
             android:text="2020-10-11"
             android:textSize="10sp" />
@@ -96,6 +99,7 @@
             android:id="@+id/mp_tv_upload"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samlip"
             android:text="업로드 여부"
             android:textSize="10sp" />
     </LinearLayout>

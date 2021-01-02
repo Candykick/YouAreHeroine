@@ -41,7 +41,13 @@ public class MyPageWriterAdapter extends RecyclerView.Adapter<MyPageWriterAdapte
     public void onBindViewHolder(@NonNull Holder holder, final int position) {
 
         // cell의 모든 View에 데이터를 알맞게 넣어준다.
-        holder.mp_tv_writer.setText(dataList.get(position).name);
+        String writer = dataList.get(position).name;
+        if(writer.length() > 16){
+            writer = writer.substring(0,15)+ "…";
+
+        }
+        holder.mp_tv_writer.setText(writer);
+
         //     holder.mp_tv_novel.setText(Integer.toString(dataList.get(position).novel));
         //      holder.mp_tv_zzim.setText(dataList.get(position).zzim);
         //    holder.mp_tv_date.setText(dataList.get(position).date);

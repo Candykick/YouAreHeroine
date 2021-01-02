@@ -24,9 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton latest;
     private ImageButton writer;
     private ImageButton search;
-    private ImageButton king;
     private ImageButton all;
-    private ImageButton made;
+    private ImageButton notice;
     private ImageButton write;
 
     private Toolbar toolbar;
@@ -59,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         writer = findViewById(R.id.main_ibtn_rank);
         search = findViewById(R.id.main_ibtn_search);
         all = findViewById(R.id.main_ibtn_whole);
-        made = findViewById(R.id.main_ibtn_notice);
+        notice = findViewById(R.id.main_ibtn_notice);
         write = findViewById(R.id.main_ibtn_write);
 
         main = findViewById(R.id.ibtn_main);
@@ -86,6 +82,51 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        latest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+
+            }
+        });
+        write.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+
+            }
+        });
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+
+            }
+        });
+        all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+
+            }
+        });
+        notice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+
+            }
+        });
+        write.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+
+            }
+        });
+
+
 
 
 

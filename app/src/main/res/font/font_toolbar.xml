@@ -14,7 +14,33 @@
         android:fontWeight="400" />
 
     <font
-        android:font="@font/binggrae"
+    android:font="@font/samanco"
+    android:fontStyle="normal"
+    android:fontWeight="400" />
+    <font
+        android:font="@font/samlip"
         android:fontStyle="normal"
         android:fontWeight="400" />
+    <font
+        android:font="@font/nexon"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/bby"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/taom"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/iropke"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/nix"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+
+
 </font-family>

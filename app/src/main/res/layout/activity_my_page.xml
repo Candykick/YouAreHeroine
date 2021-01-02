@@ -51,20 +51,21 @@
 
     <ImageButton
         android:id="@+id/ibtn_mypage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="4dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star" />
+        app:srcCompat="@drawable/ic_person" />
 
     <Button
         android:id="@+id/myPage_btn_novel"
         android:layout_width="121dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#ffffff"
+        android:fontFamily="@font/baemin_jua"
         android:outlineProvider="paddedBounds"
         android:text="찜꽁 작품"
         android:textColor="#000000"
@@ -79,6 +80,7 @@
         android:layout_width="121dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#ffffff"
+        android:fontFamily="@font/baemin_jua"
         android:outlineProvider="paddedBounds"
         android:text="찜꽁 작가"
         android:textColor="#000000"
@@ -92,6 +94,7 @@
         android:layout_width="121dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#ffffff"
+        android:fontFamily="@font/baemin_jua"
         android:outlineProvider="paddedBounds"
         android:text="내가 쓴 글"
         android:textColor="#000000"
@@ -132,6 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:fontFamily="@font/baemin_jua"
         android:text="전체 개수"
         app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
