@@ -44,9 +44,8 @@ public class MyPageNovelAdapter extends RecyclerView.Adapter<MyPageNovelAdapter.
 
         // cell의 모든 View에 데이터를 알맞게 넣어준다.
         String title = dataList.get(position).title;
-        if(title.length() > 16){
+        if(title.length() > 15){
             title = title.substring(0,15)+ "…";
-
         }
         holder.mp_tv_title.setText(title);
  //       holder.mp_tv_watcher.setText(Integer.toString(dataList.get(position).watcher));

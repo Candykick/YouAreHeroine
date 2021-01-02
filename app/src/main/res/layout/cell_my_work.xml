@@ -44,7 +44,7 @@
                 android:id="@+id/mp_tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
-                android:fontFamily="@font/taom"
+                android:fontFamily="@font/iropke"
                 android:text="제목"
                 android:textColor="#000000"
                 android:textSize="18dp" />
