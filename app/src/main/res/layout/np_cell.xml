@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/npCell"
     android:layout_width="match_parent"
     android:layout_height="70dp">
 
     <ImageView
-        android:id="@+id/wp_iv_novel_pic"
+        android:id="@+id/np_iv_novel_pic"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="10dp"
@@ -17,50 +17,80 @@
         app:srcCompat="@drawable/iv_novel_title1" />
 
     <LinearLayout
-        android:id="@+id/wp_ll_titleNnum"
+        android:id="@+id/np_ll_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/wp_iv_novel_pic"
-        app:layout_constraintStart_toEndOf="@+id/wp_iv_novel_pic"
-        app:layout_constraintTop_toTopOf="@+id/wp_iv_novel_pic">
+        app:layout_constraintBottom_toBottomOf="@+id/np_iv_novel_pic"
+        app:layout_constraintStart_toEndOf="@+id/np_iv_novel_pic"
+        app:layout_constraintTop_toTopOf="@+id/np_iv_novel_pic">
 
-        <TextView
-            android:id="@+id/wp_tv_novel_title"
+        ㅇ<LinearLayout
+            android:id="@+id/np_ll_numTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="1화: 소제목"
-            android:textSize="24dp"/>
+            android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/wp_tv_novel_num"
-            android:layout_width="157dp"
+            android:id="@+id/np_tv_novel_num"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:fontFamily="@font/nixgonfonts_m"
+            android:text="1화: "
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/np_tv_novel_title"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:fontFamily="@font/nixgonfonts_m"
+            android:text="소제목"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/np_ll_watchCom"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="조회수 340274 | 댓글수 7841"
-            android:textSize="10sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/np_tv_novel_watcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sd_samlip_hopangche_basic"
+                android:text="조회수 340274 "
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/np_tv_novel_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/sd_samlip_hopangche_basic"
+                android:text="| 댓글수 7841"
+                android:textSize="10dp" />
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/np_tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        android:orientation="vertical"
+        android:fontFamily="@font/sd_samlip_hopangche_basic"
+        android:gravity="right"
+        android:text="2020-10-11"
+        android:textColor="#000000"
+        android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/wp_tv_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:text="2020-10-11"
-            android:textSize="10sp" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
