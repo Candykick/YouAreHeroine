@@ -34,34 +34,28 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <LinearLayout
-        android:id="@+id/sp_ll_search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+    <Button
+        android:id="@+id/sp_bt_search_method"
+        style="@android:style/Widget.Material.Button.Toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:backgroundTint="#E9D3FF"
+        android:text="▽"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="339dp"
+        android:layout_height="wrap_content"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toStartOf="@+id/sp_bt_search_method"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:queryHint="검색어를 입력하세요.">
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_view"
-            android:layout_width="339dp"
-            android:layout_height="wrap_content"
-            app:iconifiedByDefault="false"
-            app:queryHint="검색어를 입력하세요.">
-
-        </androidx.appcompat.widget.SearchView>
-
-        <Button
-            android:id="@+id/sp_bt_search_method"
-            style="@android:style/Widget.Material.Button.Toggle"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:backgroundTint="#E9D3FF"
-            android:text="▽"
-            android:textColor="#000000" />
-
-    </LinearLayout>
+    </SearchView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/sp_rv_list"
@@ -70,7 +64,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,10 +75,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="정렬 방법 | 최신순"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sp_ll_search" />
+        app:layout_constraintTop_toBottomOf="@+id/search_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,16 +2,18 @@ package com.eos.youareheroine;
 
 
 //import android.support.v7.app.AppCompatActivity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -46,15 +48,20 @@ public class SearchPageActivity extends AppCompatActivity {
     Button method_search;
 
     SPAdapter adapter;
+    SearchView searchView;
+    CharSequence search = "";
+    RecyclerView sp_rv_list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_page);
-
+        searchView = findViewById(R.id.search_view);
         queue = Volley.newRequestQueue(this);
         gson = new Gson();
         String url = "https://my-json-server.typicode.com/candykick/apitest/series";
+
+       // searchView = findViewById(R.id.search_view);
 
         tv_home = (TextView)findViewById(R.id.sp_tv_home);
         tv_home.setOnClickListener(new View.OnClickListener() {
@@ -96,13 +103,14 @@ public class SearchPageActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         method_search = (Button) findViewById(R.id.sp_bt_search_method);
+        // 작품명, 작가명, 키워드
         method_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PopupMenu popup= new PopupMenu(getApplication(), view); // 현재 화면의 제어권자, 팝업 띄울 기준좌표 위젯
                 final String[] temp = new String[1];
 
-                getMenuInflater().inflate(R.menu.search_menu, popup.getMenu());
+                getMenuInflater().inflate(R.menu.filter_menu, popup.getMenu());
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
@@ -119,8 +127,10 @@ public class SearchPageActivity extends AppCompatActivity {
                     }
                 });
                 popup.show();//Popup Menu 보이기
+
             }
         });
+
 
         switch (menu_search) {
             case "최신순" :
@@ -138,12 +148,31 @@ public class SearchPageActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 ArrayList<SearchPageData> dataList = gson.fromJson(response, new TypeToken<ArrayList<SearchPageData>>() {}.getType());
-                RecyclerView sp_rv_list = findViewById(R.id.sp_rv_list);
-                sp_rv_list.setVisibility(View.VISIBLE);
+                sp_rv_list = findViewById(R.id.sp_rv_list);
                 adapter = new SPAdapter(getApplicationContext(), dataList);
                 sp_rv_list.setAdapter(adapter);
                 sp_rv_list.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+                sp_rv_list.setVisibility(View.INVISIBLE);
+                /*SearchView searchView = findViewById(R.id.search_view);*/
+                searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                    @Override
+                    // 작성하고 눌렀을 때 호출되는 부분. 내가 작성하는 부분이 query라는 매개변수로 들어옴.
+                    public boolean onQueryTextSubmit(String query) {
+                        adapter.getFilter().filter(query);
+                        return false;
+                    }
+
+                    @Override
+                    // 칠 때마다 바로바로 변하는 거 하고 싶으면 onQueryTextChange써야 함.
+                    public boolean onQueryTextChange(String newText) {
+                        //adapter.filter(newText);
+                        return false; //내가 이벤트 처리를 잘 했으면 true로 해줌.
+                    }
+                });
+
             }
+
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -157,6 +186,31 @@ public class SearchPageActivity extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setIconified(false);
+        //  searchView.onActionViewExpanded();
+        searchView.setQueryHint("검색어를 입력하세요");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                adapter.getFilter().filter(s);
+                sp_rv_list.setVisibility(View.VISIBLE);
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+
+        });
+        return true;
+    }
 
     // 뒤로가기인듯
     @Override

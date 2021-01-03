@@ -32,23 +32,9 @@ public class SPAdapter extends RecyclerView.Adapter<SPAdapter.Holder> implements
     public SPAdapter(Context context, ArrayList<SearchPageData> data) {
         this.context = context;
         this.data = data;
+        filteredData = new ArrayList<>(data);
     }
 
-    /*public void filter(String charText) {
-        charText = charText.toLowerCase(Locale.getDefault());
-        items.clear();
-        if (charText.length() == 0) {
-            items.addAll(data);
-        } else {
-            for (SearchPageData spData : data) {
-                String name = spData.getAddress();
-                if (name.toLowerCase().contains(charText)) {
-                    items.add(spData);
-                }
-            }
-        }
-        notifyDataSetChanged();
-    }*/
     @Override
     public SPAdapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) { // 셀 레이아웃 불러옴
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.sp_cell, parent, false);
@@ -140,32 +126,57 @@ public class SPAdapter extends RecyclerView.Adapter<SPAdapter.Holder> implements
 
     @Override
     public Filter getFilter() {
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence constraint) {
-                String charString = constraint.toString();
-                if (charString.isEmpty()) {
-                    filteredData = data;
-                } else {
-                    ArrayList<SearchPageData> filteringList = new ArrayList<>();
-                    for (SearchPageData d : data) {
-                        if (d.title.toLowerCase().contains(charString.toLowerCase())){
-                            filteringList.add(d);
-                        }
+        return dataFilter;
+    }
+
+    private Filter dataFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+
+            /*String key = charSequence.toString();
+            if (key.isEmpty()) {
+                filteredData = data;
+            } else {
+                ArrayList<SearchPageData> lstFiltered = new ArrayList<>();
+                for (SearchPageData spData: data) {
+                    if (spData.title.toLowerCase().contains(key.toLowerCase())) {
+                        lstFiltered.add(spData);
                     }
-                    filteredData = filteringList;
                 }
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = filteredData;
-                return filterResults;
+
+                filteredData = lstFiltered;
             }
 
-            @Override
-            protected void publishResults(CharSequence constraint, FilterResults results) {
-                filteredData = (ArrayList<SearchPageData>)results.values;
-                notifyDataSetChanged();
+            FilterResults filterResults = new FilterResults();
+            filterResults.values = filteredData;
+            return filterResults;*/
+
+            ArrayList<SearchPageData> filteredList = new ArrayList<>();
+
+            if (charSequence == null || charSequence.length() == 0) {
+                filteredList.addAll(filteredData);
+            } else {
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for (SearchPageData spData : filteredData) {
+                    if (spData.title.toLowerCase().contains(filterPattern)) {
+                        filteredList.add(spData);
+                    }
+                }
             }
-        };
-    }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            data.clear();
+            data.addAll((List) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
 
 }
