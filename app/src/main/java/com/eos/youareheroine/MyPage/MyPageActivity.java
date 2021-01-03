@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ import com.eos.youareheroine.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MyPageActivity extends AppCompatActivity {
@@ -75,7 +77,7 @@ public class MyPageActivity extends AppCompatActivity {
                 ArrayList<MPNovelData> dataList = gson.fromJson(response, new TypeToken<ArrayList<MPNovelData>>(){}.getType());
                 num.setText("전체 개수 : " + dataList.size() );
                 RecyclerView rvMain = findViewById(R.id.mp_rv);
-                MyPageNovelAdapter adapter = new MyPageNovelAdapter(getApplicationContext(), dataList);
+                MyPageNovelAdapter adapter = new MyPageNovelAdapter(MyPageActivity.this, dataList);
                 rvMain.setAdapter(adapter);
                 rvMain.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
@@ -99,7 +101,7 @@ public class MyPageActivity extends AppCompatActivity {
                 ArrayList<MPWriterData> dataList = gson.fromJson(response, new TypeToken<ArrayList<MPWriterData>>(){}.getType());
                 num.setText("전체 개수 : " + dataList.size() );
                 RecyclerView rvMain = findViewById(R.id.mp_rv);
-                MyPageWriterAdapter adapter = new MyPageWriterAdapter(getApplicationContext(), dataList);
+                MyPageWriterAdapter adapter = new MyPageWriterAdapter(MyPageActivity.this, dataList);
                 rvMain.setAdapter(adapter);
                 rvMain.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
@@ -121,7 +123,7 @@ public class MyPageActivity extends AppCompatActivity {
                 ArrayList<MPMyWorkData> dataList = gson.fromJson(response, new TypeToken<ArrayList<MPMyWorkData>>(){}.getType());
                 num.setText("전체 개수 : " + dataList.size() );
                 RecyclerView rvMain = findViewById(R.id.mp_rv);
-                MyPageMineAdapter adapter = new MyPageMineAdapter(getApplicationContext(), dataList);
+                MyPageMineAdapter adapter = new MyPageMineAdapter(MyPageActivity.this, dataList);
                 rvMain.setAdapter(adapter);
                 rvMain.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
@@ -152,7 +154,6 @@ public class MyPageActivity extends AppCompatActivity {
         mine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 novel.setTextColor(Color.parseColor("#000000"));
                 writer.setTextColor(Color.parseColor("#000000"));
                 mine.setTextColor(Color.parseColor("#D6D5F4"));

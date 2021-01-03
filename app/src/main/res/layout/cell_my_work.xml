@@ -44,7 +44,7 @@
                 android:id="@+id/mp_tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
-                android:fontFamily="@font/taom"
+                android:fontFamily="@font/iropke"
                 android:text="제목"
                 android:textColor="#000000"
                 android:textSize="18dp" />
@@ -106,13 +106,13 @@
 
     <ImageView
         android:id="@+id/mp_iv_end"
-        android:layout_width="15dp"
-        android:layout_height="20dp"
+        android:layout_width="9dp"
+        android:layout_height="14dp"
         app:layout_constraintBottom_toTopOf="@+id/mp_ll_writerNnum"
         app:layout_constraintEnd_toStartOf="@+id/mp_ll_writerNnum"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/mp_iv_novel_pic"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_ing" />
+        app:srcCompat="@drawable/ic_end" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
