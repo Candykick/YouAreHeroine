@@ -113,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/bby"
-            android:text="최신작품"
+            android:text="최신"
             android:textColor="#FFFFFF"
 
             android:textSize="16dp" />
@@ -150,9 +150,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/bby"
-            android:text="명예의전당"
+            android:text="랭킹"
             android:textColor="#FFFFFF"
-            android:textSize="15dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -217,7 +217,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/bby"
-            android:text="전체작품"
+            android:text="완결"
             android:textColor="#FFFFFF"
             android:textSize="16dp" />
 

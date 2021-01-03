@@ -69,12 +69,14 @@ public class MyPageNovelAdapter extends RecyclerView.Adapter<MyPageNovelAdapter.
             }
         });
 
-        holder.mp_iv_end.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.mp_iv_end.setImageResource(R.drawable.ic_end);
-            }
-        });
+        /*
+        boolean isEnd = dataList.get(position).isEnd;
+        if(isEnd){
+            holder.mp_iv_end.setVisibility(View.VISIBLE);
+        }else{
+            holder.mp_iv_end.setVisibility(View.INVISIBLE);
+        }
+*/
 
     }
 

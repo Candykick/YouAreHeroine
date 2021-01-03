@@ -1,15 +1,20 @@
 package com.eos.youareheroine.MyPage;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.eos.youareheroine.MainActivity;
 import com.eos.youareheroine.R;
 
 import java.util.ArrayList;
@@ -34,8 +39,12 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         // 셀 레이아웃을 불러오는 역할.
         View view = LayoutInflater.from(context).inflate(R.layout.cell_my_work, parent, false);
-        Holder holder = new Holder(view);
+        final Holder holder = new Holder(view);
+
         return holder;
+
+
+
     }
 
     @Override
@@ -56,7 +65,16 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
     //        holder.mp_tv_upload.setText("X");
         }
         Glide.with(context).load(dataList.get(position).image).into(holder.mp_iv);
-        // 각 셀을 클릭 시 작업 
+        // 각 셀을 클릭 시 작업
+
+      /*  boolean isEnd = dataList.get(position).isEnd;
+        if(isEnd){
+            holder.mp_iv_end.setVisibility(View.VISIBLE);
+        }else{
+            holder.mp_iv_end.setVisibility(View.INVISIBLE);
+        }
+*/
+      /*
         holder.mpCell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,14 +82,35 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
                 Toast.makeText(context, "Clicked "+dataList.get(position).title, Toast.LENGTH_SHORT).show();
             }
         });
+        */
 
-
-        holder.mp_iv_end.setOnClickListener(new View.OnClickListener() {
+        holder.mpCell.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick(View v) {
-               holder.mp_iv_end.setImageResource(R.drawable.ic_end);
+            public boolean onLongClick(final View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle(dataList.get(position).title);
+                final String[] items = {"수정", "삭제", "취소"};
+                builder.setItems(items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (items[which]){
+                            case "수정" :
+                         //       Intent intent = new Intent(v.getContext(), MainActivity.class);
+                                break;
+                            case "삭제" :
+                        //        dataList.remove(position);
+                                break;
+                            case "취소" :
+                                break;
+
+                        }
+                    }
+                });
+                builder.show();
+                return false;
             }
         });
+
     }
 
     // RecyclerView의 아이템 갯수를 반환하는 함수.
@@ -95,6 +134,7 @@ public class MyPageMineAdapter extends RecyclerView.Adapter<MyPageMineAdapter.Ho
         protected TextView mp_tv_date;
         protected TextView mp_tv_upload;
         protected ImageView mp_iv_end;
+
 
         public Holder(View view) {
             super(view);
