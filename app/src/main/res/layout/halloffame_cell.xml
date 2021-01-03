@@ -10,7 +10,7 @@
         android:id="@+id/rank_iv_novel_pic"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/rank_iv_novel_pic"
@@ -37,57 +38,57 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
+                android:fontFamily="@font/iropke"
                 android:text="작가 "
-                android:textSize="10sp" />
+                android:textColor="#000000"
+                android:textSize="10dp" />
 
             <TextView
                 android:id="@+id/rank_tv_episode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/iropke"
                 android:text="| 총 14화"
-                android:textSize="10sp" />
+                android:textColor="#000000"
+                android:textSize="10dp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/rank_tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:fontFamily="@font/iropke"
                 android:text="A 시리즈"
-                android:textSize="24dp" />
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/rank_iv_end"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="3dp"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/rank_tv_hashtag"
+            android:id="@+id/rank_tv_hash_tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/iropke"
             android:text="#검색한 #키워드만 #표시하나요 #다 #표시하나요"
-            android:textSize="10sp" />
+            android:textColor="#000000"
+            android:textSize="10dp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginEnd="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rank_ll_titleNnum"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.434">
 
@@ -95,22 +96,54 @@
             android:id="@+id/rank_tv_watcher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samlip"
             android:text="조회수 3333"
+            android:textColor="#000000"
             android:textSize="10sp" />
 
         <TextView
             android:id="@+id/rank_tv_comment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samlip"
             android:text="댓글수 3333"
+            android:textColor="#000000"
             android:textSize="10sp" />
 
         <TextView
             android:id="@+id/rank_tv_zzim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samlip"
             android:text="찜꽁수 3333"
+            android:textColor="#000000"
             android:textSize="10sp" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/rank_tv_rank"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="@font/binggrae"
+        android:text="1위  |"
+        android:textColor="#403E3E"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rank_iv_novel_pic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/rank_iv_isEnd"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@+id/rank_iv_novel_pic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_action_name" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

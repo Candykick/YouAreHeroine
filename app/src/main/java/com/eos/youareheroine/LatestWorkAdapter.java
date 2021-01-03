@@ -3,11 +3,13 @@ package com.eos.youareheroine;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import androidx.annotation.NonNull;
@@ -36,6 +38,7 @@ public class LatestWorkAdapter extends RecyclerView.Adapter<LatestWorkAdapter.Ho
         protected TextView latest_tv_watcher;
         protected TextView latest_tv_comment;
         protected TextView latest_tv_zzim;
+        protected ImageView latest_iv_isEnd;
 
 
         public Holder(View view){
@@ -49,6 +52,7 @@ public class LatestWorkAdapter extends RecyclerView.Adapter<LatestWorkAdapter.Ho
             this.latest_tv_watcher = view.findViewById(R.id.latest_tv_watcher);
             this.latest_tv_comment = view.findViewById(R.id.latest_tv_comment);
             this.latest_tv_zzim = view.findViewById(R.id.latest_tv_zzim);
+            this.latest_iv_isEnd = view.findViewById(R.id.latest_iv_isEnd);
         }
     }
 
@@ -62,24 +66,41 @@ public class LatestWorkAdapter extends RecyclerView.Adapter<LatestWorkAdapter.Ho
 
     @Override
     public void onBindViewHolder(@NonNull LatestWorkAdapter.Holder holder,final int position) {
-        holder.latest_tv_name.setText(dataList.get(position).writer_name);
-        holder.latest_tv_episode.setText(dataList.get(position).episode);
-        holder.latest_tv_title.setText(dataList.get(position).title);
-        holder.latest_tv_hashtag.setText(dataList.get(position).hashtag);
+        //TODO: 작품 시간 순으로 정렬하기(내림차순)
+        holder.latest_tv_name.setText(dataList.get(position).author_name);
+        holder.latest_tv_episode.setText(" | 총 " + dataList.get(position).episode + "화");
+
+        String title = dataList.get(position).title;
+        if(title.length() > 16){
+            title = title.substring(0, 15) + "…";
+        }
+        holder.latest_tv_title.setText(title);
+
+        String hash_tag = dataList.get(position).hash_tag;
+        hash_tag = hash_tag.replace(", ", " #");
+        holder.latest_tv_hashtag.setText("#" + hash_tag);
+
         holder.latest_tv_watcher.setText("조회수 " + dataList.get(position).watcher);
         holder.latest_tv_comment.setText("댓글수 " + dataList.get(position).comment);
         holder.latest_tv_zzim.setText("찜꽁수 " + dataList.get(position).zzim);
 
-        Glide.with(context).load(dataList.get(position).novel_pic).into(holder.latest_iv_novel_pic);
+        if(dataList.get(position).isEnd){
+            holder.latest_iv_isEnd.setVisibility(View.VISIBLE);
+        }
+        else{
+            holder.latest_iv_isEnd.setVisibility(View.INVISIBLE);
+        }
+
+        Glide.with(context).load(dataList.get(position).image).into(holder.latest_iv_novel_pic);
 
         holder.latest_container.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(this, NovelPageActivity.class);
-                intent.putExtra("id", dataList.get(position).id);
-                context.startActivity(intent);
-                //Toast.makeText(context, "Clicked" + dataList.get(position).writer_name, Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(this, NovelPageActivity.class);
+//                intent.putExtra("id", dataList.get(position).id);
+//                context.startActivity(intent);
+                Toast.makeText(context, "Clicked" + dataList.get(position).author_name, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -24,6 +27,9 @@ public class HallOfFame extends AppCompatActivity {
     private static final String TAG = "TEST";
     private RequestQueue queue;
     private Gson gson;
+    private Button rank_btn_week;
+    private Button rank_btn_month;
+    private Button rank_btn_legend;
 
 
     @Override
@@ -33,9 +39,9 @@ public class HallOfFame extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
         gson = new Gson();
-        String url = "http://15.164.213.69:5000/test2";
+        String url = "https://my-json-server.typicode.com/candykick/apitest/series";
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 ArrayList<HallOfFame_data> dataArrayList = gson.fromJson(response, new TypeToken<ArrayList<HallOfFame_data>>() {
@@ -57,6 +63,43 @@ public class HallOfFame extends AppCompatActivity {
 
         stringRequest.setTag(TAG);
         queue.add(stringRequest);
+
+        rank_btn_month = findViewById(R.id.rank_btn_month);
+        rank_btn_week = findViewById(R.id.rank_btn_week);
+        rank_btn_legend = findViewById(R.id.rank_btn_legend);
+
+        rank_btn_week.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO: 금주 랭킹 정렬해서 출력!
+                rank_btn_week.setTextColor(Color.parseColor("#D6D5F4"));
+                rank_btn_month.setTextColor(Color.parseColor("#000000"));
+                rank_btn_legend.setTextColor(Color.parseColor("#000000"));
+                Toast.makeText(getApplicationContext(), "Clicked weekly ranking", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        rank_btn_month.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO: 한달 랭킹 정렬해서 출력!
+                rank_btn_month.setTextColor(Color.parseColor("#D6D5F4"));
+                rank_btn_week.setTextColor(Color.parseColor("#000000"));
+                rank_btn_legend.setTextColor(Color.parseColor("#000000"));
+                Toast.makeText(getApplicationContext(), "Clicked monthly ranking", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        rank_btn_legend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO: 역대 랭킹 정렬해서 출력!
+                rank_btn_legend.setTextColor(Color.parseColor("#D6D5F4"));
+                rank_btn_week.setTextColor(Color.parseColor("#000000"));
+                rank_btn_month.setTextColor(Color.parseColor("#000000"));
+                Toast.makeText(getApplicationContext(), "Clicked legend ranking", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

@@ -32,9 +32,9 @@ public class LatestWork extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
         gson = new Gson();
-        String url = "http://15.164.213.69:5000/test2";
+        String url = "https://my-json-server.typicode.com/candykick/apitest/series";
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 ArrayList<LatestWork_data> dataArrayList = gson.fromJson(response, new TypeToken<ArrayList<LatestWork_data>>() {
