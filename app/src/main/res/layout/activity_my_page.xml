@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".MyPage.MyPageActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#D6D5F4"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleMargin="4dp"
+        app:titleTextColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kalam"
+        android:gravity="center"
+        android:text="Story for me"
+        android:textColor="#000000"
+        android:textSize="26dp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/main_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/main_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibtn_main"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="fitXY"
+        android:layout_marginStart="4dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/main_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_btn" />
+
+    <ImageButton
+        android:id="@+id/ibtn_mypage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="4dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_person" />
+
+    <Button
+        android:id="@+id/myPage_btn_novel"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffffff"
+        android:fontFamily="@font/baemin_jua"
+        android:outlineProvider="paddedBounds"
+        android:text="찜꽁 작품"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/myPage_btn_writer"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myPage_tv_user" />
+
+    <Button
+        android:id="@+id/myPage_btn_writer"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffffff"
+        android:fontFamily="@font/baemin_jua"
+        android:outlineProvider="paddedBounds"
+        android:text="찜꽁 작가"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/myPage_btn_mine"
+        app:layout_constraintStart_toEndOf="@+id/myPage_btn_novel"
+        app:layout_constraintTop_toBottomOf="@+id/myPage_tv_user" />
+
+    <Button
+        android:id="@+id/myPage_btn_mine"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffffff"
+        android:fontFamily="@font/baemin_jua"
+        android:outlineProvider="paddedBounds"
+        android:text="내가 쓴 글"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/myPage_btn_writer"
+        app:layout_constraintTop_toBottomOf="@+id/myPage_tv_user" />
+
+    <TextView
+        android:id="@+id/myPage_tv_user"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="#F3F0FD"
+        android:text="               님 "
+        android:textColor="#000000"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mp_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/myPage_tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/baemin_jua"
+        android:text="전체 개수"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myPage_btn_novel" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="#80000000"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myPage_tv_num"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="181dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
