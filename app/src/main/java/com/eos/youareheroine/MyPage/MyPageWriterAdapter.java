@@ -42,7 +42,7 @@ public class MyPageWriterAdapter extends RecyclerView.Adapter<MyPageWriterAdapte
 
         // cell의 모든 View에 데이터를 알맞게 넣어준다.
         String writer = dataList.get(position).name;
-        if(writer.length() > 16){
+        if(writer.length() > 15){
             writer = writer.substring(0,15)+ "…";
 
         }

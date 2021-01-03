@@ -23,7 +23,7 @@
             android:id="@+id/mp_tv_writer"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
-            android:fontFamily="@font/taom"
+            android:fontFamily="@font/iropke"
             android:text="작가명"
             android:textColor="#000000"
             android:textSize="20dp" />
@@ -37,15 +37,17 @@
                 android:id="@+id/mp_tv_novel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/samlip"
                 android:text="작품수 24 |"
-                android:textSize="10sp" />
+                android:textSize="10dp" />
 
             <TextView
                 android:id="@+id/mp_tv_zzim"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/samlip"
                 android:text=" 찜꽁수 7841"
-                android:textSize="10sp" />
+                android:textSize="10dp" />
         </LinearLayout>
 
 
@@ -64,9 +66,10 @@
             android:id="@+id/mp_tv_date"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:fontFamily="@font/samlip"
             android:gravity="right"
             android:text="2020-10-11"
-            android:textSize="10sp" />
+            android:textSize="10dp" />
 
     </LinearLayout>
 
